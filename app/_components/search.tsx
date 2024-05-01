@@ -5,7 +5,7 @@ const Search = () => {
   return (
     <div className="flex gap-4">
       <Input placeholder="Buscar restaurante" className="border-none" />
-      <Button size="icon">
+      <Button size="icon" className="bg-[#EA1D2C]">
         <SearchIcon size={20} />
       </Button>
     </div>
