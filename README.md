@@ -1,36 +1,19 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# iFood Clone
 
-## Getting Started
+Este é um aplicativo inspirado no iFood, que visa oferecer uma plataforma de entrega de alimentos semelhante ao famoso serviço. Utilizando tecnologias modernas como Next.js, Tailwind CSS e Prisma, o aplicativo busca proporcionar uma experiência fluida e responsiva para os usuários.
 
-First, run the development server:
+## Funcionalidades Principais
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+- **Navegação Intuitiva**: Interface amigável e fácil de usar, permitindo aos usuários encontrar e solicitar comida de forma rápida e conveniente.
+- **Pesquisa Avançada**: Recurso de pesquisa aprimorado, possibilitando aos usuários filtrar restaurantes e pratos com base em diferentes critérios, como tipo de cozinha, preço e distância.
+- **Pedidos Personalizados**: Capacidade de personalizar pedidos com instruções específicas, como restrições alimentares ou preferências de sabor.
+- **Rastreamento de Pedidos**: Funcionalidade de rastreamento em tempo real, permitindo que os usuários acompanhem o status de seus pedidos desde o momento da compra até a entrega.
+- **Pagamento Seguro**: Opções de pagamento seguras e diversas, incluindo cartão de crédito, débito ou pagamento na entrega.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Tecnologias Utilizadas
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
-
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+- **Next.js**: Framework de React para construção de aplicativos da web, oferecendo renderização do lado do servidor e outras funcionalidades avançadas.
+- **Tailwind CSS**: Biblioteca de estilos utilitários que facilita a criação de interfaces responsivas e estilizadas de forma rápida e eficiente.
+- **Prisma**: ORM (Object-Relational Mapping) moderno para Node.js e TypeScript, facilitando o acesso e a manipulação de dados do banco de dados.
+- **React**: Biblioteca JavaScript de código aberto para construção de interfaces de usuário.
+- **TypeScript**: Superconjunto de JavaScript que adiciona tipagem estática opcional ao código, melhorando a manutenção e a escalabilidade do projeto.
