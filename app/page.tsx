@@ -47,8 +47,10 @@ const Home = async () => {
             className="p-0 text-[#EA1D2C] hover:bg-transparent h-fit"
             asChild
           >
-            <Link href="/products/recommended">Ver todos</Link>
-            <ChevronRightIcon size={16} />
+            <Link href="/products/recommended">
+              Ver todos
+              <ChevronRightIcon size={16} />
+            </Link>
           </Button>
         </div>
         <ProductList products={products} />
@@ -67,9 +69,10 @@ const Home = async () => {
             className="p-0 text-[#EA1D2C] hover:bg-transparent h-fit"
             asChild
           >
-            <Link href="/restaurants/recommended"></Link>
-            Ver todos
-            <ChevronRightIcon size={16} />
+            <Link href="/restaurants/recommended">
+              Ver todos
+              <ChevronRightIcon size={16} />
+            </Link>
           </Button>
         </div>
         <RestaurantList />
