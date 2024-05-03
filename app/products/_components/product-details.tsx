@@ -42,7 +42,7 @@ const ProductDetails = ({
     });
 
   return (
-    <div className="z-50 relative mt-[-1.5rem] py-5 mt-[-5px] rounded-tl-3xl rounded-tr-3xl bg-white">
+    <div className="z-50 relative mt-[-2.0rem] py-5 mt-[-5px] rounded-tl-3xl rounded-tr-3xl bg-white">
       {/* RESTAURANTE */}
       <div className="flex items-center gap-[0.375rem] px-5">
         <div className="relative h-6 w-6">

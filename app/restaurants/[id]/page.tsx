@@ -56,7 +56,7 @@ const RestaurantPage = async ({ params: { id } }: RestaurantPageProps) => {
   return (
     <div>
       <RestaurantImage restaurant={restaurant} />
-      <div className=" flex items-center justify-between px-5 pt-5 z-50 relative bg-white mt-[-1.8rem] py-5 mt-[-5px] rounded-tl-3xl rounded-tr-3xl">
+      <div className=" flex items-center justify-between px-5 pt-5 z-50 relative bg-white mt-[-2.0rem] py-5 mt-[-5px] rounded-tl-3xl rounded-tr-3xl">
         <div className="flex items-center gap-[0.375rem]">
           <div className="relative h-8 w-8">
             <Image
