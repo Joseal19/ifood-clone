@@ -1,4 +1,4 @@
-"use client"
+"use server"
 
 import { db } from "@/app/_lib/prisma";
 
