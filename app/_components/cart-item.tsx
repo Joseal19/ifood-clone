@@ -46,11 +46,11 @@ const CartItem = ({ cartProduct }: CartItemProps) => {
 
           <div className="flex items-center gap-1">
             <h4 className="text-sm font-semibold">
-              {formatCurrency(calculateProductTotalPrice(cartProduct))}
+              {formatCurrency(calculateProductTotalPrice(cartProduct) * cartProduct.quantity)}
             </h4>
             {cartProduct.discountPercentage > 0 && (
               <span className="text-xs text-muted-foreground line-through">
-                {formatCurrency(Number(cartProduct.price))}
+                {formatCurrency(Number(cartProduct.price)* cartProduct.quantity)}
               </span>
             )}
           </div>
@@ -60,10 +60,10 @@ const CartItem = ({ cartProduct }: CartItemProps) => {
             <Button
               size="icon"
               variant="ghost"
-              className="border hover:bg-[#EA1D2C] border-solid border-muted-foreground h-8 w-8"
+              className="border hover:bg-[#EA1D2C] border-solid border-muted-foreground h-7 w-7"
             >
               <ChevronLeftIcon
-                size={18}
+                size={16}
                 onClick={handleDecreaseQuantifyClick}
               />
             </Button>
@@ -71,10 +71,10 @@ const CartItem = ({ cartProduct }: CartItemProps) => {
             <Button
               size="icon"
               variant="ghost"
-              className="border hover:bg-[#EA1D2C]  border-solid border-muted-foreground h-8 w-8"
+              className="border hover:bg-[#EA1D2C]  border-solid border-muted-foreground h-7 w-7"
             >
               <ChevronRightIcon
-                size={18}
+                size={16}
                 onClick={handleInCreaseQuantifyClick}
               />
             </Button>
@@ -89,7 +89,7 @@ const CartItem = ({ cartProduct }: CartItemProps) => {
         className="w-8 h-8 border border-solid border-muted-foreground hover:bg-[#EA1D2C]"
         onClick={handleDeleteClick}
       >
-        <TrashIcon size={18} />
+        <TrashIcon size={16} />
       </Button>
     </div>
   );
