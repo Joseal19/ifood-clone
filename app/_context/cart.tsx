@@ -22,7 +22,11 @@ interface ICartContext {
   subTotalPrice: number;
   totalPrice: number;
   totalDiscount: number;
-  addProductToCart: (
+  addProductToCart: ({
+    product,
+    quantify,
+    emptyCart,
+  }: {
     product: Prisma.ProductGetPayload<{
       include: {
         restaurant: {
@@ -31,9 +35,10 @@ interface ICartContext {
           };
         };
       };
-    }>,
-    quantify: number
-  ) => void;
+    }>;
+    quantify: number;
+    emptyCart?: boolean;
+  }) => void;
   decreaseProductQuantify: (productId: string) => void;
   inCreaseProductQuantify: (productId: string) => void;
   removeProductFromCart: (productId: string) => void;
@@ -54,9 +59,11 @@ export const CartProvider = ({ children }: { children: ReactNode }) => {
   const [products, setProducts] = useState<CartProduct[]>([]);
 
   const totalPrice = useMemo(() => {
-    return products.reduce((acc, product) => {
-      return acc + calculateProductTotalPrice(product) * product.quantity;
-    }, 0);
+    return (
+      products.reduce((acc, product) => {
+        return acc + calculateProductTotalPrice(product) * product.quantity;
+      }, 0) + Number(products?.[0]?.restaurant.deliveryFee)
+    );
   }, [products]);
 
   const subTotalPrice = useMemo(() => {
@@ -65,7 +72,8 @@ export const CartProvider = ({ children }: { children: ReactNode }) => {
     }, 0);
   }, [products]);
 
-  const totalDiscount = subTotalPrice - totalPrice;
+  const totalDiscount =
+    subTotalPrice - totalPrice + Number(products?.[0]?.restaurant.deliveryFee);
 
   const decreaseProductQuantify = (productId: string) => {
     return setProducts((prev) =>
@@ -106,7 +114,11 @@ export const CartProvider = ({ children }: { children: ReactNode }) => {
     );
   };
 
-  const addProductToCart = (
+  const addProductToCart = ({
+    product,
+    quantify,
+    emptyCart,
+  }: {
     product: Prisma.ProductGetPayload<{
       include: {
         restaurant: {
@@ -115,9 +127,16 @@ export const CartProvider = ({ children }: { children: ReactNode }) => {
           };
         };
       };
-    }>,
-    quantify: number
-  ) => {
+    }>;
+    quantify: number;
+    emptyCart?: boolean;
+  }) => {
+    // VERIFICAR SE HA ALGUM PRODUTO DE OUTRO RESTAURANTE NO CARRINHO
+
+    if (emptyCart) {
+      setProducts([]);
+    }
+
     //VERIFICAR SE O PRODUTO JA ESTA NO CARRINHO
     const isProductAlreadyOnCart = products.some(
       (cartProduct) => cartProduct.id === product.id
