@@ -35,10 +35,10 @@ const Cart = () => {
             <div className="justify-between itemss-center flex text-xs">
               <span className="text-muted-foreground">Entrega</span>
               <span>
-                {Number(products[0].restaurant.deliveryFee) === 0 ? (
+                {Number(products?.[0].restaurant.deliveryFee) === 0 ? (
                   <span className="uppercase text-primary text-[#EA1D2C]">Grátis</span>
                 ) : (
-                  formatCurrency(Number(products[0].restaurant.deliveryFee))
+                  formatCurrency(Number(products?.[0].restaurant.deliveryFee))
                 )}
               </span>
             </div>
